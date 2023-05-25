@@ -1,11 +1,11 @@
 import "./App.css";
-import Home from "./Containers/HomeContainer";
+import HomeContainer from "./Containers/HomeContainer";
 function App() {
   return (
     <div className="App">
       <h1>Redux Component</h1>
       <div>
-        <Home />
+        <HomeContainer />
       </div>
     </div>
   );
