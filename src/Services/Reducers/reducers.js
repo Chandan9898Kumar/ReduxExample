@@ -7,7 +7,10 @@ const reducer=(state=initialState,action)=>{
         case Add_To_Cart:
             return {
                 ...state,
-                cardData:action.data
+                cardData:[
+                    ...state.cardData,
+                    action.data
+                ]
             }
 
 

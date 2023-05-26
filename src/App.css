@@ -4,13 +4,32 @@
 
 .cart-wrapper {
   display: flex;
+  justify-content: left;
+  align-items: left;
+  border: 2px solid gray;
+  overflow: hidden;
+  width: 90%;
+  margin: auto;
+  max-height: 500px;
+}
+.itemToBeAdded {
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  border: 1px solid gray;
-  width: 50%;
-  margin: auto;
-  height: 170px;
+  gap: 20px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-right: 1px solid gray;
+}
+
+.addedComponent {
+  width: 100%;
+  font-size: larger;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  overflow-y: auto;
 }
 
 .img-wrapper {
@@ -46,5 +65,4 @@
   color: black;
   font-size: 15px;
   font-weight: bolder;
-
 }
