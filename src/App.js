@@ -4,9 +4,7 @@ function App() {
   return (
     <div className="App">
       <h1>Redux Component</h1>
-      <div>
-        <HomeContainer />
-      </div>
+      <HomeContainer />
     </div>
   );
 }

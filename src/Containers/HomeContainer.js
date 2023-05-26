@@ -10,9 +10,11 @@ import {addToCart} from '../Services/Actions/actions'
 // It is called every time the store state changes.
 // It receives the entire store state, and should return an object of data this component needs.
 
-const mapStateToProps = (state, ownProps) =>({
 
-})
+// mapStateToProps Will Not Run if the Store State is the Same.
+const mapStateToProps = (state, ownProps) =>{
+    return state
+}
 
 // It should take a first argument called state, optionally a second argument called ownProps, and 
 // return a plain object containing the data that the connected component needs.
@@ -51,7 +53,7 @@ const mapDispatchToProps = (dispatch)=>({
 
 
 
-export  default connect(mapDispatchToProps, mapDispatchToProps)(Home)  
+export  default connect(mapStateToProps, mapDispatchToProps)(Home)  
 // Here we connected our Home Component with redux
 
 // The connect() function connects a React component to a Redux store.
@@ -67,7 +69,7 @@ export  default connect(mapDispatchToProps, mapDispatchToProps)(Home)
 
 
 //   NOTE -
-//    Here in Container we will connect React with Redux.
+//   Here in Container we will connect React with Redux.
 
 // We can directly use Home component in App component but we in redux we use component with container
 //  just to follow best practices.
