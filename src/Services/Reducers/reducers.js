@@ -1,26 +1,29 @@
-import {Add_To_Cart} from '../constants'
+import { Add_To_Cart, Remove_From_Cart } from "../constants";
 
-const initialState = { cardData: [] };
+const initialState = {
+  cardData: [],
+};
 
-const reducer=(state=initialState,action)=>{
-    switch(action.type){
-        case Add_To_Cart:
-            return {
-                ...state,
-                cardData:[
-                    ...state.cardData,
-                    action.data
-                ]
-            }
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case Add_To_Cart:
+      return {
+        ...state,
+        cardData: [...state.cardData, action.data],
+      };
+    case Remove_From_Cart:
+      return {
+        ...state,
+        cardData: [
+          ...state.cardData.filter((item) => item.id !== action.data.id),
+        ],
+      };
 
-
-        default :return state
-    }
-
-}
-export default  reducer
-
-
+    default:
+      return state;
+  }
+};
+export default reducer;
 
 // Rules of Reducers
 // reducers must always follow some special rules:

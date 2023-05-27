@@ -1,7 +1,14 @@
 .App {
   text-align: center;
 }
-
+.subApp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 50px;
+  gap: 50px;
+}
 .cart-wrapper {
   display: flex;
   justify-content: left;
@@ -32,6 +39,17 @@
   overflow-y: auto;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.addedComponent::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.addedComponent {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .img-wrapper {
   max-width: 100%;
   height: auto;
@@ -55,9 +73,9 @@
   width: 120px;
   height: 40px;
   background: transparent;
-  background-color: cadetblue;
   border-radius: 10px;
 }
+
 .btn-wrapper .btn {
   width: 100%;
   height: inherit;
@@ -65,4 +83,11 @@
   color: black;
   font-size: 15px;
   font-weight: bolder;
+  transition: 1s all;
+}
+
+.btn:hover {
+  background-color: brown;
+  border-radius: 10px;
+  color: aliceblue;
 }

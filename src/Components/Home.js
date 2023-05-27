@@ -3,12 +3,14 @@ import "../App.css";
 import Phone from "../Assets/Phone.jpg";
 import AddedItems from "./AddedItems";
 const Home = (props) => {
-  console.log(props, "props");
   const {
     addToCartHandler,
+    removeFromCart,
     reducer: { cardData },
   } = props;
-  console.log(cardData, "card");
+
+  let date = Date.now();
+  let priceOfItem = date.toString().slice(8);
   return (
     <>
       <div className="cart-wrapper">
@@ -28,7 +30,7 @@ const Home = (props) => {
               className="btn"
               onClick={() => {
                 addToCartHandler({
-                  price: 1000,
+                  price: priceOfItem,
                   name: "i-phone 11",
                   id: Date.now(),
                 });
@@ -44,7 +46,13 @@ const Home = (props) => {
           {cardData &&
             cardData.length > 0 &&
             cardData.map((item, ind) => {
-              return <AddedItems key={ind} item={item} />;
+              return (
+                <AddedItems
+                  key={ind}
+                  item={item}
+                  removeFromCart={removeFromCart}
+                />
+              );
             })}
         </div>
       </div>
