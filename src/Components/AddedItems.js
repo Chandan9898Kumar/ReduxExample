@@ -1,6 +1,7 @@
 import Phone from "../Assets/Phone.jpg";
-const AddedItems = ({ item }) => {
-  console.log(item, "item");
+import { memo } from "react";
+import "../App.css";
+const AddedItems = ({ item, removeFromCart }) => {
   return (
     <>
       <div className="itemToBeAdded">
@@ -17,15 +18,15 @@ const AddedItems = ({ item }) => {
         <div className="btn-wrapper">
           <button
             className="btn"
-            //   onClick={() => {
-            //     addToCartHandler({ pice: 1000, name: "i phone 11",id:Date.now() });
-            //   }}
+            onClick={() => {
+              removeFromCart(item);
+            }}
           >
-            Remove From Cart
+            Remove Item
           </button>
         </div>
       </div>
     </>
   );
 };
-export default AddedItems;
+export default memo(AddedItems);
